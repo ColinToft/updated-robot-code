@@ -45,14 +45,6 @@ public class HatchDelivery extends SubsystemBase {
         grabberSolenoid.retract();
     }
 
-    public Command extendCommand() {
-        return extenderSolenoid.extendCommand();
-    }
-
-    public Command retractCommand() {
-        return extenderSolenoid.retractCommand();
-    }
-
     /**
      * Turns on float mode.
      */
@@ -64,4 +56,11 @@ public class HatchDelivery extends SubsystemBase {
         return limitSwitch.get();
     }
 
+    public void extend() {
+        extenderSolenoid.extend();
+    }
+
+    public void retract() {
+        extenderSolenoid.retract();
+    }
 }

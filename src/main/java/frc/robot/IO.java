@@ -25,8 +25,6 @@ public class IO {
   JoystickButton hatchResetButton = new JoystickButton(operatorController, RobotMap.BTN_START);
 
   JoystickButton pistonButton = new JoystickButton(operatorController, RobotMap.BTN_A);
-  JoystickButton shootButton = new JoystickButton(operatorController, RobotMap.BTN_Y);
-  JoystickButton intakeButton = new JoystickButton(operatorController, RobotMap.BTN_X);
   JoystickButton ballResetButton = new JoystickButton(operatorController, RobotMap.BTN_SELECT);
 
 

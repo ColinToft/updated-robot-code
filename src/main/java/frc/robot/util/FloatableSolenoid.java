@@ -20,23 +20,23 @@ public class FloatableSolenoid{
         two.retract();
     }
 
-    public void retractPiston() {
+    public void retract() {
         two.retract();
         one.extend();
         extended = false;
     }
 
-    public void extendPiston() {
+    public void extend() {
         one.retract();
         two.extend();
         extended = true;
     }
 
-    public void togglePiston() {
+    public void toggle() {
         if (extended) {
-            retractPiston();
+            retract();
         } else {
-            extendPiston();
+            extend();
         }
     }
 

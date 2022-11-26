@@ -41,7 +41,7 @@ public class RobotMap {
   public static final DifferentialDrive driveSystem = new DifferentialDrive(leftMotorGroup, rightMotorGroup);
 
   // Pneumatics
-  public static final FloatableSolenoid extenderSolenoid = new FloatableSolenoid(Robot.hatchDelivery, 2, 3, 4, 5);
+  public static final FloatableSolenoid extenderSolenoid = new FloatableSolenoid(2, 3, 4, 5);
   public static final DoubleSolenoidToggler grabberSolenoid = new DoubleSolenoidToggler(1, 0); 
   public static final DoubleSolenoidToggler pistons = new DoubleSolenoidToggler(6, 7);
 

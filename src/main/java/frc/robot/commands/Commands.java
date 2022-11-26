@@ -46,7 +46,7 @@ public class Commands {
 
 	// Hatch Delivery
 	public static final Command hatchDeliveryReset = new StartEndCommand(() -> {
-		CommandScheduler.getInstance().schedule(Robot.hatchDelivery.retractCommand());
+		Robot.hatchDelivery.retract();
 		Robot.hatchDelivery.closeGrabber();
 	}, () -> {
 		Robot.hatchDelivery.floatExtender();
@@ -55,25 +55,25 @@ public class Commands {
 	
 	public static final Command grab = new SequentialCommandGroup(
 		new InstantCommand(Robot.hatchDelivery::closeGrabber, Robot.hatchDelivery),
-		Robot.hatchDelivery.extendCommand(),
+		new InstantCommand(Robot.hatchDelivery::extend, Robot.hatchDelivery),
 		new WaitUntilCommand(Robot.hatchDelivery::getLimitSwitch),
 		new InstantCommand(Robot.hatchDelivery::floatExtender),
 		new WaitUntilCommand(() -> !Robot.hatchDelivery.getLimitSwitch()),
 		new InstantCommand(Robot.hatchDelivery::openGrabber),
 		new WaitCommand(0.2),
-		Robot.hatchDelivery.retractCommand(),
+		new InstantCommand(Robot.hatchDelivery::retract, Robot.hatchDelivery),
 		new ScheduleCommand(vibrateBoth)
 	);
 
 	public static final Command release = new SequentialCommandGroup(
 		new InstantCommand(Robot.hatchDelivery::openGrabber, Robot.hatchDelivery),
-		Robot.hatchDelivery.extendCommand(),
+		new InstantCommand(Robot.hatchDelivery::extend, Robot.hatchDelivery),
 		new WaitUntilCommand(Robot.hatchDelivery::getLimitSwitch),
 		new InstantCommand(Robot.hatchDelivery::floatExtender),
 		new WaitUntilCommand(() -> !Robot.hatchDelivery.getLimitSwitch()),
 		new InstantCommand(Robot.hatchDelivery::closeGrabber),
 		new WaitCommand(0.2),
-		Robot.hatchDelivery.retractCommand(),
+		new InstantCommand(Robot.hatchDelivery::retract, Robot.hatchDelivery),
 		new ScheduleCommand(vibrateBoth)
 	);
 		
