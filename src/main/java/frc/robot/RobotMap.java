@@ -18,8 +18,8 @@ import frc.robot.util.DoubleSolenoidToggler;
 import frc.robot.util.FloatableSolenoid;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 
 
 public class RobotMap {
@@ -32,10 +32,10 @@ public class RobotMap {
   public static final int[] LEFT_GROUP = { 0, 1 };
   public static final int[] RIGHT_GROUP = { 8, 9 };
 
-  public static final SpeedControllerGroup leftMotorGroup = new SpeedControllerGroup(new Spark(RobotMap.LEFT_GROUP[0]),
+  public static final MotorControllerGroup leftMotorGroup = new MotorControllerGroup(new Spark(RobotMap.LEFT_GROUP[0]),
     new Spark(RobotMap.LEFT_GROUP[1]));
 
-  public static final SpeedControllerGroup rightMotorGroup = new SpeedControllerGroup(new Spark(RobotMap.RIGHT_GROUP[0]),
+  public static final MotorControllerGroup rightMotorGroup = new MotorControllerGroup(new Spark(RobotMap.RIGHT_GROUP[0]),
     new Spark(RobotMap.RIGHT_GROUP[1]));
 
   public static final DifferentialDrive driveSystem = new DifferentialDrive(leftMotorGroup, rightMotorGroup);

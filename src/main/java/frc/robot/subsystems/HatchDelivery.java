@@ -5,6 +5,7 @@ import frc.robot.util.DoubleSolenoidToggler;
 import frc.robot.util.FloatableSolenoid;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj2.command.*;
 
 /**
@@ -26,10 +27,10 @@ public class HatchDelivery extends SubsystemBase {
 
     public HatchDelivery() {
 
-        c = new Compressor(0);
+        c = new Compressor(0, PneumaticsModuleType.CTREPCM);
 
         // auto compressor on when pressure low.
-        c.setClosedLoopControl(true);
+        c.enableDigital();
     }
 
     /** Toggles the grabber. If the grabber is closed, open it, if the grabber is open, close it. */

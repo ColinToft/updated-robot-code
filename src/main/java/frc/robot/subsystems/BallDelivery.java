@@ -10,7 +10,7 @@ package frc.robot.subsystems;
 import frc.robot.commands.Commands;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj2.command.*;
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import frc.robot.util.DoubleSolenoidToggler;
 
 /**

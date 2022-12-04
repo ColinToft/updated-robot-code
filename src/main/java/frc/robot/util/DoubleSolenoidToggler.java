@@ -1,6 +1,7 @@
 package frc.robot.util;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
 /**
  * @author Marston Connell <3
@@ -15,7 +16,7 @@ public class DoubleSolenoidToggler extends DoubleSolenoid {
      * A togglable Double Solenoid wrapper
      */
     public DoubleSolenoidToggler(int portOne, int portTwo){
-        super(portOne, portTwo);
+        super(PneumaticsModuleType.CTREPCM, portOne, portTwo);
 
     }
 

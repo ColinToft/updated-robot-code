@@ -29,12 +29,12 @@ public class IO {
 
 
   public IO() {
-    grabButton.whenPressed(Commands.grab);
-    releaseButton.whenPressed(Commands.release);
-    hatchResetButton.whenPressed(Commands.hatchDeliveryReset);
+    grabButton.onTrue(Commands.grab);
+    releaseButton.onTrue(Commands.release);
+    hatchResetButton.onTrue(Commands.hatchDeliveryReset);
 
-    pistonButton.whenPressed(Commands.toggleBallDeliveryPistons);
-    ballResetButton.whenPressed(Commands.ballDeliveryReset);
+    pistonButton.onTrue(Commands.toggleBallDeliveryPistons);
+    ballResetButton.onTrue(Commands.ballDeliveryReset);
   }
 
 }

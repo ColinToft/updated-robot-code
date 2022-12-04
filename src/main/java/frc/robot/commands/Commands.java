@@ -1,6 +1,5 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj2.command.*;
 import frc.robot.Robot;
@@ -35,7 +34,7 @@ public class Commands {
 	public static final CommandBase emergencyStop = new InstantCommand(() -> Robot.driveTrain.stop(), Robot.driveTrain);
 		
 	// Ball delivery
-	public static final Command launch = new RunCommand(() -> Robot.ballDelivery.power(Robot.io.operatorController.getY(Hand.kRight)), Robot.ballDelivery);
+	public static final Command launch = new RunCommand(() -> Robot.ballDelivery.power(Robot.io.operatorController.getRightY()), Robot.ballDelivery);
 
 	public static final Command ballDeliveryReset = new InstantCommand(() -> {
 		Robot.ballDelivery.raise();
